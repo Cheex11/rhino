@@ -65,7 +65,7 @@ input[type=text]:focus {
 
 #css-the-map {
 	display: inline-block;
-	width: 737px;
 	background-color: orange;
-	height: 100%;
+	width: 737px;
+	height: 700px;
 }
