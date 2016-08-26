@@ -14,6 +14,9 @@
 <div class='css-map-container'>
 	<div class='css-map-holder'>
 		<div id='css-the-dealers'>
+			<div class='css-dealer-info'></div>
+			<div class='css-dealer-info'></div>
+			<div class='css-dealer-info'></div>
 		</div>
 
 		<div id='css-the-map'>
@@ -37,7 +40,6 @@
   var entry = data.feed.entry;
 
   $(entry).each(function(){
-  	console.log(this);
     // Column names are name, age, etc.
     $('.results').prepend('<h2>'+this.gsx$dealer.$t+'</h2>');
   });
