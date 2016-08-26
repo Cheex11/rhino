@@ -1,0 +1,23 @@
+{% layout 'fullwidth' %}
+
+{{ 'dealer-styles.css' | asset_url | stylesheet_tag }}
+
+
+<div class='css-container'>
+	<h1 class="css-banner-text">Locate a Dealer Near You</h1>
+
+
+	<input class="css-search" type="text" name="search" placeholder="Country, ZIP, State or Dealer">
+</div>
+
+<div class='css-map-container'>
+	<div class='css-map-holder'>
+		<div id='css-the-dealers'>
+
+		</div>
+
+		<div id='css-the-map'>
+
+		</div>
+	</div>
+</div>

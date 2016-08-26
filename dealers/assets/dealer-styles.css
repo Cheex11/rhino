@@ -1,0 +1,71 @@
+
+.css-container {
+	width: 100%;
+	text-align: center;
+}
+
+.css-banner-text {
+	font-family: "Avenir Next W1G";
+	font-weight: 100;
+	font-size: 62px;
+}
+
+.input[type=text] {
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    /*width: 100%;*/
+}
+
+.css-search {
+	margin: 0 auto;
+	width: 670px;
+	font-family: "Avenir Next";
+}
+
+::-webkit-input-placeholder {
+   font-family: "Avenir Next";
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-family: "Avenir Next";
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-family: "Avenir Next";
+}
+
+:-ms-input-placeholder {
+   font-family: "Avenir Next";
+}
+
+.css-map-container {
+	white-space: nowrap;
+	width: 100%;
+	background-color: #606060;
+	margin-top: 100px;
+	height: 700px;
+}
+
+.css-map-holder {
+	background-color: white;
+	width: 1093px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#css-the-dealers {
+	display: inline-block;
+	width: 356px;
+	height: 100%;
+}
+
+#css-the-map {
+	display: inline-block;
+	width: 737px;
+	background-color: orange;
+	height: 100%;
+}
