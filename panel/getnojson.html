@@ -1,0 +1,25 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<div class='results'>
+</div>
+
+</html>
+
+
+<script>
+
+	console.log('hello');
+
+
+
+	var spreadsheetID = "1ktfOe2rvSK8G_BFHY5qeazF6hZ5J_7Mka5QiVYQmwnI";
+	var rows = 0
+	var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
+
+	$.get(url, function(data) {
+		console.log(data);
+	});
+
+
+</script>

@@ -1,0 +1,77 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<div class='results'>
+</div>
+
+</html>
+
+
+<script>
+
+	console.log('hello');
+
+
+
+	// Google Spreadhseet
+	// ID of the Google Spreadsheet
+	var spreadsheetID = "1ktfOe2rvSK8G_BFHY5qeazF6hZ5J_7Mka5QiVYQmwnI";
+	var rows = 0
+
+	// Make sure it is public or set to Anyone with link can view
+	var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
+
+	$.getJSON(url, function(data) {
+		var entries = data.feed.entry;
+
+
+	    $(entries).each(function(){
+
+	    	var stores = [];
+	    	rows = rows + 1;
+	    	// var headings = this.parseRow_(rows[0]);
+
+	    	// POSITION
+    		// var position = new google.maps.LatLng(this.gsx$latitude.$t, this.gsx$longitude.$t);
+
+
+	    	$('.results').prepend('<h2>'+this.gsx$dealer.$t+'</h2>');
+	    });
+
+	    // var arr_from_json = JSON.parse( entries );
+
+		// console.log(arr_from_json);
+		console.log(rows);
+	});
+
+
+
+	// $.getJSON(url, function(data) {
+ //    	var entries = data.feed.entry;
+
+	//     $(entries).each(function(){
+	//     	$('.results').prepend('<h2>'+this.gsx$dealer.$t+'</h2>');
+	//     });
+ //    });
+
+
+
+MedicareDataSource.prototype.parse_ = function(csv) {
+  	var stores = [];
+
+	var position = new google.maps.LatLng(this.gsx$laltitude.$t, this.gsx$longitude.$t);
+
+    var store = new storeLocator.Store(position, {
+      title: this.gsx$dealer,
+      address: this.gsx$Address
+    });
+    stores.push(store);
+  // }
+  // return stores;
+};
+
+console.log(parse_());
+
+
+
+</script>

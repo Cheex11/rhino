@@ -60,6 +60,7 @@ input[type=text]:focus {
 #css-the-dealers {
 	display: inline-block;
     box-sizing: border-box;
+    overflow-y: auto;
 	width: 356px;
 	height: 100%;
 	border: 1px solid #CCCCCC;
