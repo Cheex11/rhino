@@ -1,3 +1,7 @@
+h4{
+    padding: 0px;
+    margin: 0px;
+}
 
 .css-container {
 	width: 100%;
@@ -8,6 +12,20 @@
 	font-family: "Avenir Next W1G";
 	font-weight: 100;
 	font-size: 62px;
+}
+
+#top-banner h4 {
+	font-family: "Avenir Next W1G";
+	font-weight: 100;
+	font-size: 62px;
+}
+
+.location-search input {
+	margin: 0 auto;
+	width: 670px;
+	font-family: "Avenir Next";
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
 
 .input[type=text] {
@@ -81,3 +99,103 @@ input[type=text]:focus {
 	width: 737px;
 	height: 700px;
 }
+
+
+.storelocator-panel {
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+
+.storelocator-panel .store-list {
+  margin: 0;
+  padding: 0;
+}
+
+.storelocator-panel .store-list li,
+.storelocator-panel .directions-panel {
+  padding: 5px;
+}
+.storelocator-panel .directions-panel {
+  font-size: 0.8em;
+}
+
+.storelocator-panel .store-list li.store:hover {
+  cursor: pointer;
+  background: #eee;
+}
+
+.storelocator-panel .store-list li.highlighted,
+.storelocator-panel .store-list li.highlighted:hover {
+  background: #ccf;
+}
+
+.storelocator-panel .directions {
+  display: none;
+}
+
+.storelocator-panel {
+  padding: 5px;
+}
+
+.storelocator-panel input {
+  width: 95%;
+}
+
+.storelocator-panel .store-list .no-stores {
+  color: grey;
+}
+
+.storelocator-panel .store .features {
+  display: none;
+}
+
+.storelocator-panel .feature-filter {
+  overflow: hidden;
+}
+
+.storelocator-panel .feature-filter label {
+  display: block;
+  font-size: 0.8em;
+  margin: 0 0.4em;
+  float: left;
+}
+
+.store .title {
+  font-weight: bold;
+}
+
+.store .address,
+.store .phone,
+.store .web,
+.store .misc {
+  font-size: 80%;
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+  display: block;
+}
+
+.store .features {
+  overflow: hidden;
+  color: grey;
+  margin: 0;
+  padding: 0;
+  font-size: 70%;
+  max-width: 250px;
+}
+
+.store .features li {
+  display: inline;
+  float: left;
+  padding-right: 0.8em;
+}
+
+.store .web a {
+  color: green
+}
+
+.store .action {
+  font-size: 0.8em;
+  color: green;
+  margin-right: 0.5em;
+}
+

@@ -1,6 +1,6 @@
 {% layout 'fullwidth' %}
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
 
 {{ 'jquery.js' | asset_url | script_tag }}
 {{ 'store-locator.min.js' | asset_url | script_tag }} <!-- Functions -->
@@ -8,11 +8,14 @@
 {{ 'panel.js' | asset_url | script_tag }} <!-- Assimilates csv+maps -->
 {{ 'dealer-styles.css' | asset_url | stylesheet_tag }}
 
+
 <div class='css-container'>
-	<h1 class="css-banner-text">Locate a Dealer Near You</h1>
-	<form id="search-form">
-		<input class="css-search" id='search-field' type="text" name="search" placeholder="Country, ZIP, State or Dealer">
-	</form>
+	<div id='top-banner'>
+		<!-- <h1 class="css-banner-text">Locate a Dealer Near You</h1>
+		<form id="search-form">
+			<input class="css-search" id='search-field' type="text" name="search" placeholder="Country, ZIP, State or Dealer">
+		</form> -->
+	</div>
 </div>
 
 <div class='css-map-container'>
@@ -28,5 +31,7 @@
 		<div id='panel'></div>
 		<div id='map-canvas'></div>
 	</div>
+</div>
+
 </div>
 

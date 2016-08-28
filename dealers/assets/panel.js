@@ -19,4 +19,12 @@ $( document ).ready(function() {
       view: view
     });
   });
+
+  $('form').find("input[type=textarea]").each(function(ev)
+    {
+      if(!$(this).val()) {
+        $(this).attr("placeholder", "Type your answer here");
+    }
+  });
+
 });
