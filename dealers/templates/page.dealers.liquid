@@ -2,9 +2,10 @@
 
 {{ 'dealer-styles.css' | asset_url | stylesheet_tag }}
 {{ 'jquery.js' | asset_url | script_tag }}
-{{ 'dealer_maps.js' | asset_url | script_tag }}
-<!-- {{ 'geocode.js' | asset_url | script_tag }} -->
-
+{{ 'store-locator.min.js' | asset_url | script_tag }} <!-- Functions -->
+{{ 'dealer_maps.js' | asset_url | script_tag }} <!-- Loads map info -->
+{{ 'dealer_data.js' | asset_url | script_tag }} <!-- Pulls csv data -->
+{{ 'panel.js' | asset_url | script_tag }} <!-- Assimilates csv+maps -->
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
@@ -18,18 +19,16 @@
 
 <div class='css-map-container'>
 	<div class='css-map-holder'>
-		<div id='css-the-dealers'>
+		<!-- <div id='css-the-dealers'>
 			<div class='css-dealer-info'></div>
 			<div class='css-dealer-info'></div>
 			<div class='css-dealer-info'></div>
-		</div>
+		</div> -->
 
-		<div id='css-the-map'>
-		</div>
+		<!-- <div id='css-the-map'>
+		</div> -->
+		<div id='panel'></div>
+		<div id='map'></div>
 	</div>
 </div>
-
-
-<div class="results"></div>
-<div id="out"></div>
 
