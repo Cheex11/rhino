@@ -2,7 +2,7 @@ $( document ).ready(function() {
   google.maps.event.addDomListener(window, 'load', function() {
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
       center: new google.maps.LatLng(47, -122),
-      zoom: 9,
+      zoom: 4,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
@@ -11,7 +11,7 @@ $( document ).ready(function() {
     var data = new DealerDataSources;
 
     var view = new storeLocator.View(map, data, {
-      geolocation: false,
+      geolocation: true,
       features: data.getFeatures()
     });
 
@@ -19,4 +19,16 @@ $( document ).ready(function() {
       view: view
     });
   });
+
+  var Alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+
+  setTimeout(
+    function()
+    {
+      $(".store-list li").each(function( index ) {
+          $(this).prepend("<div class='rank'>"+Alphabet[index]+"</div>");
+        });
+    }, 3000);
+
+
 });

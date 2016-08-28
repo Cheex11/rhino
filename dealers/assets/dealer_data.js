@@ -34,7 +34,7 @@ DealerDataSources.prototype.parse_ = function(csv) {
       title: row.gsx$dealer.$t,
       distance: distance,
       address: row.gsx$address.$t,
-      web: row.gsx$website.$t,
+      web: "<a href='row.gsx$website.$t'>View Website</a>",
       phone: row.gsx$phone.$t
     });
     stores.push(store);
@@ -51,8 +51,6 @@ get_distance = function(lat1,lon1,lat2,lon2) {
     a = b - c;
     d = e - d;
     c = Math.sin(a / 2) * Math.sin(a / 2) + Math.cos(c) * Math.cos(b) * Math.sin(d / 2) * Math.sin(d / 2);
-    console.log(c);
-
     return 7918 * Math.atan2(Math.sqrt(c), Math.sqrt(1 - c))
 }
 
