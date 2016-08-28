@@ -9,14 +9,16 @@ h4{
 }
 
 .css-banner-text {
-	font-family: "Avenir Next W1G";
+	font-family: "Avenir Next";
 	font-weight: 100;
 	font-size: 62px;
 }
 
 #top-banner h4 {
-	font-family: "Avenir Next W1G";
+	font-family: "Avenir Next";
 	font-weight: 100;
+	margin-top: 75px;
+	margin-bottom: 40px;
 	font-size: 62px;
 }
 
@@ -92,6 +94,14 @@ input[type=text]:focus {
 	border-bottom: 1px solid #CCCCCC;
 }
 
+.store-list li {
+	display: block;
+    box-sizing: border-box;
+	width: 100%;
+	height: 192px;
+	border-bottom: 1px solid #CCCCCC;
+}
+
 #map-canvas {
 	display: inline-block;
 	left: -2px;
@@ -126,7 +136,8 @@ input[type=text]:focus {
 
 .storelocator-panel .store-list li.highlighted,
 .storelocator-panel .store-list li.highlighted:hover {
-  background: #ccf;
+  background: #0380da;
+  color: white;
 }
 
 .storelocator-panel .directions {
@@ -197,5 +208,37 @@ input[type=text]:focus {
   font-size: 0.8em;
   color: green;
   margin-right: 0.5em;
+}
+
+
+
+/*PANEL LEFT STORES*/
+.store-list li {
+	display: block;
+    box-sizing: border-box;
+	width: 100%;
+	height: 192px;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.title {
+	margin-top: 27px;
+	padding-left: 52px;
+	font-family: "Avenir Next";
+	font-size: 18px;
+    font-weight: 600 !important;
+    margin-left: 0px !important;
+}
+
+.address {
+	margin-top: 20px !important;
+	padding-left: 52px;
+	font-family: "Avenir Next";
+	font-size: 18px;
+    font-weight: 400 !important;
+}
+
+.no-stores {
+	display: none !important;
 }
 
