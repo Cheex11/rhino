@@ -2,7 +2,7 @@
  * @extends storeLocator.StaticDataFeed
  * @constructor
  */
-function MedicareDataSource() {
+function DealerDataSources() {
   $.extend(this, new storeLocator.StaticDataFeed);
     var spreadsheetID = "1ktfOe2rvSK8G_BFHY5qeazF6hZ5J_7Mka5QiVYQmwnI";
     var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
@@ -15,7 +15,6 @@ function MedicareDataSource() {
             // console.log(Object.keys(this));
             dealers.push(this);
         });
-        console.log(dealers);
         that.setStores(that.parse_(dealers));
     });
 }
@@ -25,7 +24,7 @@ function MedicareDataSource() {
  * @type {!storeLocator.FeatureSet}
  * @private
  */
-MedicareDataSource.prototype.FEATURES_ = new storeLocator.FeatureSet(
+DealerDataSources.prototype.FEATURES_ = new storeLocator.FeatureSet(
   // new storeLocator.Feature('Wheelchair-YES', 'Wheelchair access'),
   // new storeLocator.Feature('Audio-YES', 'Audio')
 );
@@ -33,7 +32,7 @@ MedicareDataSource.prototype.FEATURES_ = new storeLocator.FeatureSet(
 /**
  * @return {!storeLocator.FeatureSet}
  */
-MedicareDataSource.prototype.getFeatures = function() {
+DealerDataSources.prototype.getFeatures = function() {
   return this.FEATURES_;
 };
 
@@ -44,7 +43,7 @@ MedicareDataSource.prototype.getFeatures = function() {
  */
 
 
-MedicareDataSource.prototype.parse_ = function(csv) {
+DealerDataSources.prototype.parse_ = function(csv) {
   var stores = [];
   var rows = csv;
   // var headings = Object.keys(csv);
@@ -78,7 +77,6 @@ MedicareDataSource.prototype.parse_ = function(csv) {
     });
     stores.push(store);
   }
-  console.log(stores);
   return stores;
 };
 
@@ -89,7 +87,7 @@ MedicareDataSource.prototype.parse_ = function(csv) {
  * @param {string} sep the separator.
  * @return {string}
  */
-MedicareDataSource.prototype.join_ = function(arr, sep) {
+DealerDataSources.prototype.join_ = function(arr, sep) {
   var parts = [];
   for (var i = 0, ii = arr.length; i < ii; i++) {
     arr[i] && parts.push(arr[i]);
@@ -104,7 +102,7 @@ MedicareDataSource.prototype.join_ = function(arr, sep) {
  * @param {string} row
  * @return {Array.<string>}
  */
-MedicareDataSource.prototype.parseRow_ = function(row) {
+DealerDataSources.prototype.parseRow_ = function(row) {
   // Strip leading quote.
   if (row.charAt(0) == '"') {
     row = row.substring(1);
@@ -127,7 +125,7 @@ MedicareDataSource.prototype.parseRow_ = function(row) {
  * @param {Array.<string>} row
  * @return {Object}
  */
-MedicareDataSource.prototype.toObject_ = function(headings, row) {
+DealerDataSources.prototype.toObject_ = function(headings, row) {
   var result = {};
   for (var i = 0, ii = row.length; i < ii; i++) {
     // console.log(headings);

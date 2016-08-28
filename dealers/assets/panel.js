@@ -8,7 +8,7 @@ $( document ).ready(function() {
 
     var panelDiv = document.getElementById('panel');
 
-    var data = new MedicareDataSource;
+    var data = new DealerDataSources;
 
     var view = new storeLocator.View(map, data, {
       geolocation: false,

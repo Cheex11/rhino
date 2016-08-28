@@ -1,14 +1,12 @@
 {% layout 'fullwidth' %}
 
-{{ 'dealer-styles.css' | asset_url | stylesheet_tag }}
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
 {{ 'jquery.js' | asset_url | script_tag }}
 {{ 'store-locator.min.js' | asset_url | script_tag }} <!-- Functions -->
-{{ 'dealer_maps.js' | asset_url | script_tag }} <!-- Loads map info -->
 {{ 'dealer_data.js' | asset_url | script_tag }} <!-- Pulls csv data -->
 {{ 'panel.js' | asset_url | script_tag }} <!-- Assimilates csv+maps -->
-
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-
+{{ 'dealer-styles.css' | asset_url | stylesheet_tag }}
 
 <div class='css-container'>
 	<h1 class="css-banner-text">Locate a Dealer Near You</h1>
@@ -28,7 +26,7 @@
 		<!-- <div id='css-the-map'>
 		</div> -->
 		<div id='panel'></div>
-		<div id='map'></div>
+		<div id='map-canvas'></div>
 	</div>
 </div>
 

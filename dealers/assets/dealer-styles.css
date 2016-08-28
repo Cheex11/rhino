@@ -57,7 +57,7 @@ input[type=text]:focus {
 	margin: 0 auto;
 }
 
-#css-the-dealers {
+#panel {
 	display: inline-block;
     box-sizing: border-box;
     overflow-y: auto;
@@ -74,7 +74,7 @@ input[type=text]:focus {
 	border-bottom: 1px solid #CCCCCC;
 }
 
-#css-the-map {
+#map-canvas {
 	display: inline-block;
 	left: -2px;
 	background-color: orange;
