@@ -28,8 +28,11 @@ DealerDataSources.prototype.parse_ = function(csv) {
     var position = new google.maps.LatLng( row.gsx$latitude.$t, row.gsx$longitude.$t);
     var shop = this.join_([row.Shp_num_an, row.Shp_centre], ', ');
     var locality = this.join_([row.Locality, row.Postcode], ', ');
-    // var distance = get_distance(47.186064, -122.253836,row.gsx$latitude.$t,row.gsx$longitude.$t).toFixed(2).concat(" miles");
-    var distance = get_distance(47.186064, -122.253836,row.gsx$latitude.$t,row.gsx$longitude.$t).toFixed(0).concat(" miles");
+    // Distance calculated in this file.
+    // var distance = get_distance(47.186064, -122.253836,row.gsx$latitude.$t,row.gsx$longitude.$t).toFixed(0).concat(" miles");
+
+    // Distance to be calculated dynamically:
+    var distance = 0;
 
     var store = new storeLocator.Store(i, position, features, {
       title: row.gsx$dealer.$t,
