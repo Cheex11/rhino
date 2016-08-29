@@ -28,13 +28,14 @@ DealerDataSources.prototype.parse_ = function(csv) {
     var position = new google.maps.LatLng( row.gsx$latitude.$t, row.gsx$longitude.$t);
     var shop = this.join_([row.Shp_num_an, row.Shp_centre], ', ');
     var locality = this.join_([row.Locality, row.Postcode], ', ');
-    var distance = get_distance(47.186064, -122.253836,row.gsx$latitude.$t,row.gsx$longitude.$t).toFixed(2).concat(" miles");
+    // var distance = get_distance(47.186064, -122.253836,row.gsx$latitude.$t,row.gsx$longitude.$t).toFixed(2).concat(" miles");
+    var distance = get_distance(47.186064, -122.253836,row.gsx$latitude.$t,row.gsx$longitude.$t).toFixed(0).concat(" miles");
 
     var store = new storeLocator.Store(i, position, features, {
       title: row.gsx$dealer.$t,
       distance: distance,
       address: row.gsx$address.$t,
-      web: "<a href='row.gsx$website.$t'>View Website</a>",
+      web: "<a href='" + row.gsx$website.$t + "'>View Website</a>",
       phone: row.gsx$phone.$t
     });
     stores.push(store);
@@ -43,7 +44,6 @@ DealerDataSources.prototype.parse_ = function(csv) {
 };
 
 get_distance = function(lat1,lon1,lat2,lon2) {
-
         c = storeLocator.toRad_(lat1),
         d = storeLocator.toRad_(lon1),
         b = storeLocator.toRad_(lat2),

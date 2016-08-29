@@ -100,6 +100,7 @@ input[type=text]:focus {
 	width: 100%;
 	height: 192px;
 	border-bottom: 1px solid #CCCCCC;
+	overflow: hidden;
 }
 
 #map-canvas {
@@ -136,9 +137,16 @@ input[type=text]:focus {
 
 .storelocator-panel .store-list li.highlighted,
 .storelocator-panel .store-list li.highlighted:hover {
-  background: #0380da;
+  /*background: #0380da;*/
+  background: #b3b0b0;
   color: white;
 }
+
+.store-list a {
+  text-decoration: underline;
+  color: blue !important;
+}
+
 
 .storelocator-panel .directions {
   display: none;
@@ -241,11 +249,14 @@ input[type=text]:focus {
 }
 
 .title {
+	width: 200px;
+  	white-space: normal;
+	display: inline-block;
 	margin-top: 27px;
 	padding-left: 52px;
 	font-family: "Avenir Next";
 	font-size: 18px;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     margin-left: 0px !important;
 }
 
@@ -257,7 +268,60 @@ input[type=text]:focus {
     font-weight: 400 !important;
 }
 
+.address-line-two {
+	padding-left: 52px;
+	font-family: "Avenir Next";
+	font-size: 18px;
+    font-weight: 400 !important;
+}
+
 .no-stores {
 	display: none !important;
 }
 
+.distance {
+	right: 15px;
+	display: inline-block;
+	width: 50px;
+	text-align: right;
+	font-family: "Avenir Next";
+	font-size: 18px;
+    font-weight: 400 !important;
+}
+
+.phone {
+	display: inline-block !important;
+	margin-top: 27px;
+	padding-left: 52px;
+	font-family: "Avenir Next";
+	font-size: 18px;
+    font-weight: 400 !important;
+    margin-left: 0px !important;
+
+}
+
+.web {
+	display: inline-block !important;
+	margin-top: 27px;
+	padding-left: 52px;
+	font-family: "Avenir Next";
+	font-size: 18px;
+    font-weight: 400 !important;
+    margin-left: 0px !important;
+}
+
+
+
+
+
+
+
+
+
+.pac-container {
+	top: 330px !important;
+}
+
+.pac-container:after{
+    content:none !important;
+}
