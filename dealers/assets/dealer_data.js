@@ -21,8 +21,10 @@ DealerDataSources.prototype.parse_ = function(csv) {
 
   for (var i = 1, row; row = rows[i]; i++) {
 
+    // console.log(this);
+
     var features = new storeLocator.FeatureSet;
-    features.add(this.FEATURES_.getById('Visible-' + 'YES'));
+    // features.add(this.FEATURES_.getById('Visible-' + 'YES'));
 
     var position = new google.maps.LatLng( row.gsx$latitude.$t, row.gsx$longitude.$t);
     var shop = this.join_([row.Shp_num_an, row.Shp_centre], ', ');
