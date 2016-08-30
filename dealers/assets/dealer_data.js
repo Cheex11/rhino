@@ -22,7 +22,7 @@ DealerDataSources.prototype.parse_ = function(csv) {
   for (var i = 1, row; row = rows[i]; i++) {
 
     var features = new storeLocator.FeatureSet;
-    // features.add(this.FEATURES_.getById('Visible-' + 'yes'));
+    features.add(this.FEATURES_.getById('Visible-' + 'YES'));
 
     var position = new google.maps.LatLng( row.gsx$latitude.$t, row.gsx$longitude.$t);
     var shop = this.join_([row.Shp_num_an, row.Shp_centre], ', ');
@@ -45,16 +45,16 @@ DealerDataSources.prototype.parse_ = function(csv) {
   return stores;
 };
 
-get_distance = function(lat1,lon1,lat2,lon2) {
-        c = storeLocator.toRad_(lat1),
-        d = storeLocator.toRad_(lon1),
-        b = storeLocator.toRad_(lat2),
-        e = storeLocator.toRad_(lon2);
-    a = b - c;
-    d = e - d;
-    c = Math.sin(a / 2) * Math.sin(a / 2) + Math.cos(c) * Math.cos(b) * Math.sin(d / 2) * Math.sin(d / 2);
-    return 7918 * Math.atan2(Math.sqrt(c), Math.sqrt(1 - c))
-}
+// get_distance = function(lat1,lon1,lat2,lon2) {
+//         c = storeLocator.toRad_(lat1),
+//         d = storeLocator.toRad_(lon1),
+//         b = storeLocator.toRad_(lat2),
+//         e = storeLocator.toRad_(lon2);
+//     a = b - c;
+//     d = e - d;
+//     c = Math.sin(a / 2) * Math.sin(a / 2) + Math.cos(c) * Math.cos(b) * Math.sin(d / 2) * Math.sin(d / 2);
+//     return 7918 * Math.atan2(Math.sqrt(c), Math.sqrt(1 - c))
+// }
 
 /**
  * Joins elements of an array that are non-empty and non-null.
@@ -72,26 +72,11 @@ DealerDataSources.prototype.join_ = function(arr, sep) {
 };
 
 
-/**
- * @const
- * @type {!storeLocator.FeatureSet}
- * @private
- */
 DealerDataSources.prototype.FEATURES_ = new storeLocator.FeatureSet(
-  // new storeLocator.Feature('Wheelchair-YES', 'Wheelchair access'),
-  // new storeLocator.Feature('Audio-YES', 'Audio')
+  // IF what follows the "-" matches, describe as what in B.
+  new storeLocator.Feature('Visible-YES', 'Visible')
 );
 
-/**
- * @return {!storeLocator.FeatureSet}
- */
 DealerDataSources.prototype.getFeatures = function() {
   return this.FEATURES_;
 };
-
-/**
- * @private
- * @param {string} csv
- * @return {!Array.<!storeLocator.Store>}
- */
-
