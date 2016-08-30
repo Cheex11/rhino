@@ -76,7 +76,7 @@ DealerDataSources.prototype.join_ = function(arr, sep) {
 
 DealerDataSources.prototype.FEATURES_ = new storeLocator.FeatureSet(
   // IF what follows the "-" matches, describe as what in B.
-  new storeLocator.Feature('Visible-YES', 'Visible')
+  // new storeLocator.Feature('Visible-YES', 'Visible')
 );
 
 DealerDataSources.prototype.getFeatures = function() {
