@@ -70,6 +70,15 @@ input[type=text]:focus {
 	height: 700px;
 }
 
+.css-location-form {
+	white-space: nowrap;
+	width: 100%;
+	display: none;
+	margin-top: 100px;
+	height: 300px;
+	text-align: center;
+}
+
 .css-map-holder {
 	background-color: white;
 	width: 1093px;
@@ -319,7 +328,7 @@ input[type=text]:focus {
 
 
 .pac-container {
-	top: 330px !important;
+	top: 300px !important;
 }
 
 .pac-container:after{
