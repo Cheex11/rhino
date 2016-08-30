@@ -19,16 +19,4 @@ $( document ).ready(function() {
       view: view
     });
   });
-
-  // var Alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-
-  // setTimeout(
-  //   function()
-  //   {
-  //     $(".store-list li").each(function( index ) {
-  //         $(this).prepend("<div class='rank'>"+Alphabet[index]+"</div>");
-  //       });
-  //   }, 3000);
-
-
 });
