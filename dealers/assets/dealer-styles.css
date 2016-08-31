@@ -40,12 +40,6 @@ input[type=text]:focus {
     /*width: 100%;*/
 }
 
-.css-search {
-	margin: 0 auto;
-	width: 670px;
-	font-family: "Avenir Next";
-}
-
 ::-webkit-input-placeholder {
    font-family: "Avenir Next";
 }
@@ -62,7 +56,12 @@ input[type=text]:focus {
    font-family: "Avenir Next";
 }
 
+.map-container-toggle-bar {
+	display: none;
+}
+
 .css-map-container {
+	position: relative;
 	white-space: nowrap;
 	width: 100%;
 	background-color: #606060;
@@ -294,7 +293,7 @@ input[type=text]:focus {
 	width: 50px;
 	text-align: right;
 	font-family: "Avenir Next";
-	font-size: 18px;
+	font-size: 13px;
     font-weight: 400 !important;
 }
 
@@ -319,14 +318,6 @@ input[type=text]:focus {
     margin-left: 0px !important;
 }
 
-
-
-
-
-
-
-
-
 .pac-container {
 	top: 300px !important;
 }
@@ -334,3 +325,55 @@ input[type=text]:focus {
 .pac-container:after{
     content:none !important;
 }
+
+
+/* PHONE */
+@media (max-width: 600px) {
+	#top-banner h4 {
+		font-size: 42px;
+	}
+
+	#map-container-toggle-bar {
+		position: absolute;
+		top: -40px;
+		height: 40px;
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+
+	.map-container-toggle-bar-row {
+		display: block;
+		width: 100%;
+	}
+
+	.map-container-toggle {
+		display: inline-block;
+		height: 40px;
+		color: #333333;
+		font-family: "Avenir Next";
+		font-size: 16px;
+		width: 100px;
+		box-sizing: border-box;
+	}
+
+	.css-map-holder {
+		width: 100%;
+	}
+
+	.location-search input {
+		width: 100%;
+		text-align: center;
+	}
+
+	#panel {
+		width: 100%;
+	}
+
+	#map-canvas {
+		width: 100%;
+		display: none;
+	}
+}
+
+
