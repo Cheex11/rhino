@@ -24,7 +24,9 @@ $( document ).ready(function() {
   });
 
 
+
   $('.map-container-toggle').click(function() {
+
     $(this).css('border-bottom', "solid 2px #0080DA");
     $(this).css('color', "#0080DA");
     $(this).siblings().css('border-bottom', "none");
@@ -33,9 +35,14 @@ $( document ).ready(function() {
     var id_to_make_visible = $(this).attr('id').substring(0, $(this).attr('id').indexOf('-toggle'));
     var id_to_hide = $(this).siblings().attr('id').substring(0, $(this).siblings().attr('id').indexOf('-toggle'));
 
+    console.log('visible: ' + id_to_make_visible);
+    console.log('hide: ' + id_to_hide);
 
     $('#' + id_to_make_visible + '').css('display','block');
     $('#' + id_to_hide + '').css('display','none');
+
+    // Not 100% sure why, but this is necessary or else the map won't show.
+    google.maps.event.trigger($("#map-canvas")[0], 'resize');
 
   })
 
