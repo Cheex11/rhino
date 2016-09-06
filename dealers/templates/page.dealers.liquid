@@ -8,12 +8,10 @@
 {{ 'panel.js' | asset_url | script_tag }} <!-- Assimilates csv+maps -->
 {{ 'dealer-styles.css' | asset_url | stylesheet_tag }}
 
-
 <div class='css-container'>
 	<div id='top-banner'>
 	</div>
 </div>
-
 
 <div class='css-map-container'>
 	<div id='map-container-toggle-bar'>
@@ -27,11 +25,11 @@
 		</div>
 	</div>
 	<div class='css-map-holder'>
-		<div id='panel'>
+		<div id='dealer-panel'>
 			<div class='css-location-form'>
 				Sorry, we couldn’t locate a store close to your location. Feel free to recommend a store you want to see Rhino at by <a href="">clicking here</a>.
 			</div>
 		</div>
-		<div id='map-canvas'></div>
+		<div id='dealer-map'></div>
 	</div>
 </div>
