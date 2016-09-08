@@ -1,31 +1,63 @@
-(function($) {
-  $(function() {
-    var dealerMap = $('#dealer-map');
-	    if (dealerMap.length) {
-	      (function(){
+(function waitForElement($, DealerMap){
+  if (typeof google === "undefined") {
+    setTimeout(function(){
+        waitForElement($, Rhino.DealerMap);
+    },100);
+  } else {
 
-	      	var init = function() {
+      window.map = new google.maps.Map(document.getElementById('dealer-map'), {
+        center: new google.maps.LatLng(47, -122),
+        zoom: 9,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
 
-	      		var mapOptions = {
-	      		      zoom: 8,
-	      		      center: new google.maps.LatLng(-34.397, 150.644),
-	      		      mapTypeId: google.maps.MapTypeId.ROADMAP
-	      		};
+      var panelDiv = document.getElementById('dealer-panel');
+      var data = new DealerMap.DealerDataSources;
+      var view = new storeLocator.View(map, data, {
+        geolocation: true,
+        features: data.getFeatures()
+      });
 
-	      		var map = new google.maps.Map(dealerMap[0],mapOptions);
+      new storeLocator.Panel(panelDiv, {view: view});
 
-	      	}
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          map.setCenter(pos);
+          $('#top-form').val(pos.lat + ',' + pos.lng);
+          $('#top-form').submit();
+          $('#top-form').val('');
+        });
+      }
 
-		      var script = document.createElement("script");
-		      script.type = "text/javascript";
-		      document.getElementsByTagName("body")[0].appendChild(script);
-		      script.src = "https://maps.googleapis.com/maps/api/js?key=";
 
-		      script.onload=function(){
-		      	init();
-		      };
+      var ui = {
+        map_element: $('#dealer-map'),
+        dealer_element: $('#dealer-panel'),
+        toggle: $('.map-container-toggle')
+      }
 
-      })();
+      ui.toggle.click(function() {
+        $(this).css('border-bottom', "solid 2px #0080DA");
+        $(this).css('color', "#0080DA");
+        $(this).siblings().css('border-bottom', "none");
+        $(this).siblings().css('color', "#333333");
+
+        var id_to_make_visible = $(this).attr('id').substring(0, $(this).attr('id').indexOf('-toggle'));
+        var id_to_hide = $(this).siblings().attr('id').substring(0, $(this).siblings().attr('id').indexOf('-toggle'));
+
+        $('#' + id_to_make_visible + '').css('display','block');
+        $('#' + id_to_hide + '').css('display','none');
+        center = map.getCenter();
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(center);
+        map.setZoom(8);
+
+      })
     }
-  });
-})(Rhino.jQuery);
+})(Rhino.jQuery, Rhino.DealerMap);
+
+
